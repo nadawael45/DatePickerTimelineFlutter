@@ -5,9 +5,11 @@
 /// github: https://github.com/iamvivekkaushik/
 /// ***
 
-import 'package:date_picker_timeline/gestures/tap.dart';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
+import 'gestures/tap.dart';
 
 class DateWidget extends StatelessWidget {
   final double? width;
@@ -34,29 +36,43 @@ class DateWidget extends StatelessWidget {
       child: Container(
         width: width,
         margin: const EdgeInsets.all(3.0),
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-          color: selectionColor,
-        ),
+
         child: Padding(
           padding: const EdgeInsets.all(8),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Text(new DateFormat("MMM", locale).format(date).toUpperCase(), // Month
-                  style: monthTextStyle),
-              Text(date.day.toString(), // Date
-                  style: dateTextStyle),
+              // Text(new DateFormat("MMM", locale).format(date).toUpperCase(), // Month
+              //     style: monthTextStyle),
+
               Text(new DateFormat("E", locale).format(date).toUpperCase(), // WeekDay
-                  style: dayTextStyle)
+                  style: dayTextStyle),
+              SizedBox(height: 10,),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(20)),
+                  color: selectionColor,
+                ),
+                child: InkWell(
+                  onTap: () {
+                    onDateSelected?.call(this.date);
+
+                  },
+
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(date.day.toString(), // Date
+                        style: dateTextStyle),
+                  ),
+                ),
+              ),
+
             ],
           ),
         ),
       ),
-      onTap: () {
-        onDateSelected?.call(this.date);
-      },
+
     );
   }
 }

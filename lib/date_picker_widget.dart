@@ -1,11 +1,12 @@
 
 
-import 'package:date_picker_timeline/date_widget.dart';
-import 'package:date_picker_timeline/extra/color.dart';
-import 'package:date_picker_timeline/extra/style.dart';
-import 'package:date_picker_timeline/gestures/tap.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
+
+import 'date_widget.dart';
+import 'extra/color.dart';
+import 'extra/style.dart';
+import 'gestures/tap.dart';
 
 class DatePicker extends StatefulWidget {
   /// Start Date in case user wants to show past dates

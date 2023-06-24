@@ -1,6 +1,9 @@
-import 'package:date_picker_timeline/extra/color.dart';
+
 import 'package:flutter/material.dart';
-import 'package:date_picker_timeline/extra/dimen.dart';
+
+import 'color.dart';
+import 'dimen.dart';
+
 
 const TextStyle defaultMonthTextStyle = TextStyle(
   color: AppColors.defaultMonthColor,
