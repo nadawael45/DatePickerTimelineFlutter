@@ -52,7 +52,7 @@ class DateWidget extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.all(Radius.circular(20)),
-                  color: selectionColor,
+                  color: Colors.red.withOpacity(0.3),
                 ),
                 child: InkWell(
                   onTap: () {
